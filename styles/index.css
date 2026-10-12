@@ -1,0 +1,617 @@
+:root {
+    --bg-outer: #121212;
+    --bg-app: #ffffff;
+    --card-bg: #f8f8f8;
+    --text-main: #000000;
+    --text-muted: #666666;
+    --border-color: #eeeeee;
+    --accent-blue: #2563eb;
+    --tag-inactive: #f2f2f2;
+    --tag-active: #000000;
+    --pill-nav-bg: #000000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-outer);
+    color: var(--text-main);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+/* APP CONTAINER */
+.app-container {
+    width: 100%;
+    max-width: 430px;
+    background-color: var(--bg-app);
+    min-height: 880px;
+    border-radius: 24px;
+    position: relative;
+    padding-bottom: 90px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* HEADER */
+.app-header {
+    padding: 20px 20px 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--bg-app);
+}
+
+.logo-text {
+    font-weight: 900;
+    font-size: 1.3rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    font-style: italic;
+    color: var(--text-main);
+    text-decoration: none;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-main);
+    font-size: 1.2rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -5px;
+    right: -7px;
+    background: var(--accent-blue);
+    color: #ffffff;
+    font-size: 0.6rem;
+    font-weight: 800;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* CATALOG HEADERS & FILTERS */
+.section-container {
+    padding: 10px 16px 16px 16px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 12px;
+}
+
+.tag-small {
+    font-size: 0.65rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--text-main);
+}
+
+.view-all {
+    color: var(--text-muted);
+    font-size: 0.72rem;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.filter-tags {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 16px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.filter-tags::-webkit-scrollbar {
+    display: none;
+}
+
+.tag {
+    background: var(--tag-inactive);
+    color: var(--text-main);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.tag.active {
+    background: var(--tag-active);
+    color: #ffffff;
+}
+
+/* PRODUCT GRID */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.product-card {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.img-wrapper {
+    position: relative;
+    width: 100%;
+    height: 160px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img-wrapper.contain img {
+    object-fit: contain;
+    padding: 6px;
+    background: #ffffff;
+}
+
+.badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    background: #000000;
+    color: #ffffff;
+    font-size: 0.55rem;
+    font-weight: 800;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+
+.badge.blue {
+    background: var(--accent-blue);
+}
+
+.card-info {
+    padding: 6px 2px;
+}
+
+.card-info h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-main);
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card-info .price {
+    font-size: 0.82rem;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-top: 2px;
+}
+
+/* FLOATING NAV PILL */
+.bottom-nav {
+    position: absolute;
+    bottom: 16px;
+    left: 20px;
+    right: 20px;
+    background: var(--pill-nav-bg);
+    border-radius: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 12px 24px;
+    z-index: 90;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+/* MODAL OVERLAY (CONSTRAINED TO MOBILE CONTAINER) */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    display: none;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: column;
+    z-index: 2000;
+}
+
+.modal-overlay.active {
+    display: flex;
+}
+
+.modal-sheet {
+    background: #ffffff;
+    color: #000000;
+    width: 100%;
+    max-width: 430px;
+    border-radius: 20px 20px 0 0;
+    padding: 20px;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 12px;
+}
+
+.modal-category-tag {
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    color: var(--accent-blue);
+    text-transform: uppercase;
+}
+
+.modal-close {
+    background: #f0f0f0;
+    border: none;
+    color: #000000;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-body-content {
+    padding-top: 14px;
+}
+
+.modal-banner {
+    width: 100%;
+    height: 240px;
+    background: #f8f8f8;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.modal-banner img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.modal-info-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+}
+
+.modal-info-header h2 {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: #000;
+    margin: 0;
+}
+
+.modal-info-header span {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+    display: block;
+    margin-top: 2px;
+}
+
+.modal-size-section {
+    margin-bottom: 14px;
+}
+
+.modal-size-section label {
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #666;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.pill-container {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.measurement-box {
+    background: #f8f8f8;
+    border: 1px solid #eee;
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin-bottom: 14px;
+}
+
+.measurement-box label {
+    font-size: 0.7rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #000;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.measurement-box p {
+    font-size: 0.75rem;
+    color: #555;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.cart-body {
+    padding: 16px 0;
+}
+
+.empty-msg {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.cart-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 14px;
+}
+
+.subtotal {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.checkout-btn {
+    width: 100%;
+    background: #000000;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    border-radius: 10px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* HERO BANNER FIX */
+.hero-card {
+    position: relative;
+    margin: 0 16px 16px 16px;
+    border-radius: 16px;
+    overflow: hidden;
+    height: 380px; /* Locks height to standard mobile card banner */
+    background: #111111;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: brightness(0.75); /* Darkens image slightly so text stands out */
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    z-index: 2;
+}
+
+.sub-tag {
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    color: #ffffff;
+    opacity: 0.9;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.hero-title {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 0.95;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    margin-bottom: 14px;
+}
+
+.shop-button {
+    display: inline-block;
+    background: #ffffff;
+    color: #000000;
+    padding: 10px 18px;
+    border-radius: 20px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+/* PARK LOOKS BLUE BANNER */
+.blue-banner {
+    background: var(--accent-blue);
+    color: #ffffff;
+    margin: 16px;
+    padding: 20px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.banner-sub {
+    font-size: 0.65rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    display: block;
+    color: #ffffff;
+}
+
+.banner-title {
+    font-size: 1.4rem;
+    font-weight: 900;
+    color: #ffffff;
+    margin-top: 2px;
+}
+
+.banner-count {
+    font-size: 0.72rem;
+    font-weight: 800;
+    background: rgba(255, 255, 255, 0.25);
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: #ffffff;
+}
+
+/* FIT INTELLIGENCE GRID SECTION */
+.fit-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 0 16px 20px 16px;
+}
+
+.fit-card {
+    border-radius: 14px;
+    overflow: hidden;
+    position: relative;
+}
+
+.fit-card.dark {
+    background: #000000;
+    color: #ffffff;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.fit-sub {
+    font-size: 0.6rem;
+    font-weight: 800;
+    color: var(--accent-blue);
+    display: block;
+}
+
+.fit-card.dark h2 {
+    font-size: 0.95rem;
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 6px 0;
+    color: #ffffff;
+}
+
+.fit-card.dark p {
+    font-size: 0.62rem;
+    color: #aaaaaa;
+    margin-bottom: 12px;
+    line-height: 1.3;
+}
+
+.fit-btn {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 16px;
+    font-size: 0.65rem;
+    font-weight: 800;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+/* FIX SKATEBOARD MODEL IMAGE HEIGHT */
+.fit-card.image-card {
+    height: 180px;
+    width: 100%;
+}
+
+.fit-card.image-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.image-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    font-size: 0.55rem;
+    font-weight: 800;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 4px 6px;
+    border-radius: 6px;
+    text-align: center;
+}

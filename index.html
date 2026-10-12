@@ -3,120 +3,236 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Clothing App</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>SIDEWAYS | Streetwear & Vintage Drops</title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
+
     <div class="app-container">
         
         <!-- Header -->
         <header class="app-header">
-            <span class="logo-text">SIDEWAYS</span>
+            <a href="index.html" class="logo-text">SIDEWAYS</a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="bi bi-search"></i></button>
+                <button class="icon-btn" id="cartBtn" aria-label="Cart">
+                    <i class="bi bi-bag"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
         </header>
 
         <!-- Hero Section -->
-        <div class="hero-card">
-            <img src="images/banner.png" alt="Built to Break Line" class="hero-img">
+        <section class="hero-card">
+            <img src="images/banner.png" alt="Built to Break Line Banner" class="hero-img">
             <div class="hero-content">
                 <span class="sub-tag">MOVE DIFFERENT</span>
                 <h1 class="hero-title">BUILT TO<br>BREAK<br>LINE</h1>
                 <a href="page2.html" class="shop-button">Shop the drop &rarr;</a>
             </div>
-        </div>
+        </section>
 
         <!-- Filter Tags -->
-        <div class="filter-tags">
-            <button class="tag active">All</button>
-            <button class="tag">Apparel</button>
-            <button class="tag">Decks</button>
-            <button class="tag">Accessories</button>
-        </div>
+        <section class="filter-tags" id="filterContainer">
+            <button class="tag active" data-category="All">All</button>
+            <button class="tag" data-category="Apparel">Apparel</button>
+            <button class="tag" data-category="Decks">Decks</button>
+            <button class="tag" data-category="Accessories">Accessories</button>
+        </section>
 
-        <!-- NEW DROP Section (4 Cards) -->
-        <div class="section-header">
-            <div>
-                <span class="tag-small">FRESH CONCRETE</span>
-                <h2 class="section-title">NEW DROP</h2>
-            </div>
-            <a href="page2.html" class="view-all">View all &rarr;</a>
-        </div>
-
-        <div class="product-scroll">
-            <div class="product-card">
-                <div class="img-wrapper">
-                    <img src="images/Image (Static Motion Tee).png" alt="Static Motion Tee">
-                    <span class="badge">NEW</span>
+        <!-- NEW DROP Section -->
+        <section class="section-container">
+            <div class="section-header">
+                <div>
+                    <span class="tag-small">FRESH CONCRETE</span>
+                    <h2 class="section-title">NEW DROP</h2>
                 </div>
-                <div class="card-info">
-                    <h3>Static Motion Tee</h3>
-                    <p class="price">$42</p>
-                </div>
+                <a href="page2.html" class="view-all">View all &rarr;</a>
             </div>
 
-            <div class="product-card">
-                <div class="img-wrapper">
-                    <img src="images/Image (Concrete Flow Deck).png" alt="Concrete Flow Deck">
-                    <span class="badge blue">ONLY 8 LEFT</span>
+            <!-- Scrollable Product List -->
+            <div class="product-grid" id="productGrid">
+                
+                <div class="product-card" data-category="Apparel" data-name="Static Motion Tee" data-price="42" data-sizes="XS,S,M,L,XL" data-measurements="Chest: 22 in | Length: 28 in">
+                    <div class="img-wrapper">
+                        <img src="images/Image (Static Motion Tee).png" alt="Static Motion Tee">
+                        <span class="badge">NEW</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Static Motion Tee</h3>
+                        <p class="price">$42</p>
+                    </div>
                 </div>
-                <div class="card-info">
-                    <h3>Concrete Flow Deck</h3>
-                    <p class="price">$88</p>
-                </div>
-            </div>
 
-            <div class="product-card">
-                <div class="img-wrapper">
-                    <img src="images/Image (Lines at sundown).png" alt="After Dark Hoodie">
-                    <span class="badge">DROP 01</span>
+                <div class="product-card" data-category="Decks" data-name="Concrete Flow Deck" data-price="88" data-sizes="8.0,8.25,8.5" data-measurements="Width: 8.25 in | Length: 31.8 in">
+                    <div class="img-wrapper">
+                        <img src="images/Image (Concrete Flow Deck).png" alt="Concrete Flow Deck">
+                        <span class="badge blue">ONLY 8 LEFT</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Concrete Flow Deck</h3>
+                        <p class="price">$88</p>
+                    </div>
                 </div>
-                <div class="card-info">
-                    <h3>After Dark Hoodie</h3>
-                    <p class="price">$88</p>
-                </div>
-            </div>
 
-            <div class="product-card">
-                <div class="img-wrapper">
-                    <img src="images/Image (Low Light 5-Panel).png" alt="Low Light 5-Panel">
-                    <span class="badge">DROP 01</span>
+                <div class="product-card" data-category="Apparel" data-name="After Dark Hoodie" data-price="88" data-sizes="S,M,L,XL" data-measurements="Chest: 24 in | Length: 29 in">
+                    <div class="img-wrapper">
+                        <img src="images/Image (Lines at sundown).png" alt="After Dark Hoodie">
+                        <span class="badge">DROP 01</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>After Dark Hoodie</h3>
+                        <p class="price">$88</p>
+                    </div>
                 </div>
-                <div class="card-info">
-                    <h3>Low Light 5-Panel</h3>
-                    <p class="price">$34</p>
+
+                <div class="product-card" data-category="Accessories" data-name="Low Light 5-Panel" data-price="34" data-sizes="One Size" data-measurements="Adjustable Strapback (54cm - 61cm)">
+                    <div class="img-wrapper">
+                        <img src="images/Image (Low Light 5-Panel).png" alt="Low Light 5-Panel">
+                        <span class="badge">DROP 01</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Low Light 5-Panel</h3>
+                        <p class="price">$34</p>
+                    </div>
                 </div>
+
             </div>
-        </div>
+        </section>
 
         <!-- PARK LOOKS Banner -->
-        <div class="blue-banner">
+        <section class="blue-banner" id="lookbook">
             <div>
                 <span class="banner-sub">WORK OUT THERE</span>
                 <h2 class="banner-title">PARK LOOKS</h2>
             </div>
             <span class="banner-count">01 / 04</span>
-        </div>
+        </section>
 
-        <!-- YOUR FIT Block Section -->
-        <div class="fit-section">
+        <!-- FIT INTELLIGENCE Section -->
+        <section class="fit-section" id="fit-guide">
             <div class="fit-card dark">
-                <span class="fit-sub">FIT INTELLIGENCE</span>
-                <h2>YOUR FIT.<br>NO GUESSING.</h2>
-                <p>Tell us how you wear it. We'll match the cut, weight and drape to your style.</p>
-                <button class="fit-btn">Build your profile &rarr;</button>
+                <div>
+                    <span class="fit-sub">FIT INTELLIGENCE</span>
+                    <h2>YOUR FIT.<br>NO GUESSING.</h2>
+                    <p>Tell us how you wear it. We'll match the cut, weight and drape to your style.</p>
+                </div>
+                <button class="fit-btn" id="buildProfileBtn">Build your profile &rarr;</button>
             </div>
             <div class="fit-card image-card">
                 <img src="images/Image (Built for the street).png" alt="Fit Model">
                 <span class="image-tag">RELAXED FITS / HEAVY COTTON</span>
             </div>
-        </div>
+        </section>
 
-        <!-- Navigation Bar -->
+        <!-- Bottom Navigation Bar -->
         <nav class="bottom-nav">
             <a href="index.html" class="nav-item active">Home</a>
             <a href="page2.html" class="nav-item">Shop</a>
         </nav>
 
     </div>
-    <script src="script.js"></script>
+
+    <!-- PRODUCT DETAIL MODAL SHEET -->
+    <div class="modal-overlay" id="productDetailModal">
+        <div class="modal-sheet">
+            <div class="modal-header">
+                <span style="font-size: 0.7rem; font-weight: 800; letter-spacing: 1px; color: #2563eb; text-transform: uppercase;">Product Overview</span>
+                <button class="modal-close" id="closeProdModal">&times;</button>
+            </div>
+            <div style="padding-top: 14px;">
+                <div class="img-wrapper" style="height: 240px; background: #f8f8f8; border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                    <img id="modalProdImg" src="" alt="Product Image" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+                    <div>
+                        <h2 id="modalProdName" style="font-size: 1.2rem; font-weight: 900; color: #000; margin: 0;"></h2>
+                        <span id="modalProdPrice" style="font-size: 1.1rem; font-weight: 800; color: #2563eb; display: block; margin-top: 2px;"></span>
+                    </div>
+                </div>
+                <div style="margin-bottom: 14px;">
+                    <label style="font-size: 0.72rem; font-weight: 800; text-transform: uppercase; color: #666; display: block; margin-bottom: 6px;">Select Size</label>
+                    <div id="sizePillContainer" style="display: flex; gap: 8px; flex-wrap: wrap;"></div>
+                </div>
+                <div class="measurement-box" style="background: #f8f8f8; border: 1px solid #eee; padding: 10px 12px; border-radius: 10px; margin-bottom: 14px;">
+                    <label style="font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: #000; display: block; margin-bottom: 2px;">
+                        <i class="bi bi-ruler me-1"></i> Garment Measurements
+                    </label>
+                    <p id="modalProdMeasurements" style="font-size: 0.75rem; color: #555; line-height: 1.4; margin: 0;"></p>
+                </div>
+                <button class="checkout-btn" id="addToBagBtn" style="width: 100%; background: #000; color: #fff; padding: 14px; border-radius: 12px; font-weight: 800; font-size: 0.85rem; border: none; cursor: pointer;">
+                    ADD TO BASKET
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART & CHECKOUT MODAL DRAWER -->
+    <div class="modal-overlay" id="cartModal">
+        <div class="modal-sheet">
+            <div class="modal-header">
+                <h3 id="modalHeading">YOUR BASKET</h3>
+                <button class="modal-close" id="closeCart">&times;</button>
+            </div>
+            <div id="basketView">
+                <div class="cart-body" id="cartBody">
+                    <p class="empty-msg">Your shopping bag is empty. Click any item to select size and add it!</p>
+                </div>
+                <div class="cart-footer">
+                    <div class="subtotal">
+                        <span>Subtotal</span>
+                        <strong id="cartSubtotal">$0.00</strong>
+                    </div>
+                    <button class="checkout-btn" id="proceedCheckoutBtn">PROCEED TO CHECKOUT</button>
+                </div>
+            </div>
+            <div id="checkoutFormView" style="display: none; padding-top: 12px;">
+                <p style="font-size: 0.8rem; color: #666; margin-bottom: 12px; font-weight: 700;">Ready to purchase?</p>
+                <form id="checkoutForm" style="display: flex; flex-direction: column; gap: 10px;">
+                    <div>
+                        <label style="font-size: 0.72rem; font-weight: 700; display: block; margin-bottom: 2px;">Full Name</label>
+                        <input type="text" id="custName" required placeholder="John Doe" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.8rem;">
+                    </div>
+                    <div>
+                        <label style="font-size: 0.72rem; font-weight: 700; display: block; margin-bottom: 2px;">Delivery Address</label>
+                        <input type="text" id="custAddress" required placeholder="123 Street Name, City" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.8rem;">
+                    </div>
+                    <div>
+                        <label style="font-size: 0.72rem; font-weight: 700; display: block; margin-bottom: 2px;">Card Number</label>
+                        <input type="text" id="custCard" required placeholder="4532 •••• •••• 8890" maxlength="19" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.8rem;">
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <div style="flex: 1;">
+                            <label style="font-size: 0.72rem; font-weight: 700; display: block; margin-bottom: 2px;">Expiry Date</label>
+                            <input type="text" id="custExp" required placeholder="MM/YY" maxlength="5" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.8rem;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label style="font-size: 0.72rem; font-weight: 700; display: block; margin-bottom: 2px;">CVC</label>
+                            <input type="text" id="custCvc" required placeholder="123" maxlength="4" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.8rem;">
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px;">
+                        <div class="subtotal" style="margin-bottom: 10px;">
+                            <span>Total Due</span>
+                            <strong id="formTotalAmount">$0.00</strong>
+                        </div>
+                        <button type="submit" class="checkout-btn" style="background: #2563eb;">PAY NOW</button>
+                        <button type="button" id="backToBasketBtn" style="width: 100%; background: none; border: none; color: #666; margin-top: 8px; font-size: 0.75rem; cursor: pointer;">&larr; Back to Basket</button>
+                    </div>
+                </form>
+            </div>
+            <div id="orderSuccessView" style="display: none; text-align: center; padding: 24px 10px;">
+                <i class="bi bi-check-circle-fill" style="font-size: 2.5rem; color: #2563eb;"></i>
+                <h3 style="margin-top: 10px; font-size: 1.1rem;">ORDER CONFIRMED!</h3>
+                <p style="font-size: 0.8rem; color: #666; margin-top: 6px;">Thank you for your purchase. We are preparing your order for shipment.</p>
+                <button id="finishOrderBtn" class="checkout-btn" style="margin-top: 16px;">CONTINUE SHOPPING</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/index.js"></script>
 </body>
 </html>

@@ -3,43 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop - Mobile Clothing App</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>SIDEWAYS | Full Shop Catalog</title>
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="styles/index.css">
 </head>
 <body>
+
     <div class="app-container">
+        
+        <!-- Header -->
         <header class="app-header">
-            <span class="logo-text">SIDEWAYS SHOP</span>
+            <a href="index.html" class="logo-text">SIDEWAYS</a>
+            <div class="header-actions">
+                <button class="icon-btn" id="searchBtn" aria-label="Search"><i class="bi bi-search"></i></button>
+                <button class="icon-btn" id="cartBtn" aria-label="Cart">
+                    <i class="bi bi-bag"></i>
+                    <span class="cart-badge" id="cartCount">0</span>
+                </button>
+            </div>
         </header>
 
-        <h2 class="section-title">ALL PRODUCTS</h2>
-
-        <div class="product-scroll" style="flex-wrap: wrap;">
-            <div class="product-card">
-                <div class="img-wrapper">
-                    <img src="images/Image (Static Motion Tee).png" alt="Static Motion Tee">
+        <!-- Section Header -->
+        <div class="section-container">
+            <div class="section-header">
+                <div>
+                    <span class="tag-small">FULL CATALOG</span>
+                    <h2 class="section-title">ALL DROPS</h2>
                 </div>
-                <div class="card-info">
-                    <h3>Static Motion Tee</h3>
-                    <p class="price">$42</p>
-                </div>
+                <a href="index.html" class="view-all">&larr; Back to Home</a>
             </div>
 
-            <div class="product-card">
-                <div class="img-wrapper">
-                    <img src="images/Image (Concrete Flow Deck).png" alt="Concrete Flow Deck">
+            <!-- Filter Categories -->
+            <div class="filter-tags">
+                <button class="tag active" data-category="All">All</button>
+                <button class="tag" data-category="Apparel">Apparel</button>
+                <button class="tag" data-category="Decks">Decks</button>
+                <button class="tag" data-category="Outerwear">Outerwear</button>
+                <button class="tag" data-category="Accessories">Accessories</button>
+            </div>
+
+            <!-- Product Grid -->
+            <div class="product-grid">
+                
+                <!-- 1. APPAREL: Static Motion Tee -->
+                <div class="product-card" 
+                     data-category="Apparel" 
+                     data-name="Static Motion Tee" 
+                     data-price="42"
+                     data-sizes="XS,S,M,L,XL,XXL"
+                     data-measurements="Chest (Pit-to-Pit): 22 in | Length: 28 in">
+                    <div class="img-wrapper">
+                        <img src="images/Image (Static Motion Tee).png" alt="Static Motion Tee">
+                        <span class="badge">NEW</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Static Motion Tee</h3>
+                        <p class="price">$42</p>
+                    </div>
                 </div>
-                <div class="card-info">
-                    <h3>Concrete Flow Deck</h3>
-                    <p class="price">$88</p>
+
+                <!-- 2. DECK 1: Concrete Flow Deck -->
+                <div class="product-card" 
+                     data-category="Decks" 
+                     data-name="Concrete Flow Deck" 
+                     data-price="88"
+                     data-sizes="8.0,8.25,8.5"
+                     data-measurements="Width: 8.25 in | Length: 31.8 in | 7-Ply Canadian Maple">
+                    <div class="img-wrapper">
+                        <img src="images/Image (Concrete Flow Deck).png" alt="Concrete Flow Deck">
+                        <span class="badge blue">ONLY 8 LEFT</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Concrete Flow Deck</h3>
+                        <p class="price">$88</p>
+                    </div>
                 </div>
+
+                <!-- 3. DECK 2: Custom Skate Deck -->
+                <div class="product-card" 
+                     data-category="Decks" 
+                     data-name="Custom Skate Deck" 
+                     data-price="78"
+                     data-sizes="8.125,8.25,8.5"
+                     data-measurements="Width: 8.25 in | Length: 32 in | High Concave">
+                    <div class="img-wrapper contain">
+                        <img src="images/Skate-decks.jpg" alt="Custom Skate Deck">
+                        <span class="badge">DECKS</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Custom Skate Deck</h3>
+                        <p class="price">$78</p>
+                    </div>
+                </div>
+
+                <!-- 4. ACCESSORY 1: Pro-Drip Skate Helmet -->
+                <div class="product-card" 
+                     data-category="Accessories" 
+                     data-name="Pro-Drip Skate Helmet" 
+                     data-price="55"
+                     data-sizes="S/M,L/XL"
+                     data-measurements="S/M: 54-58cm | L/XL: 58-62cm (ABS Shell + EPS Foam)">
+                    <div class="img-wrapper contain">
+                        <img src="images/helmet.jpg" alt="Pro-Drip Skate Helmet">
+                        <span class="badge blue">SAFETY</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Pro-Drip Skate Helmet</h3>
+                        <p class="price">$55</p>
+                    </div>
+                </div>
+
+                <!-- 5. ACCESSORY 2: Protection Pad Set -->
+                <div class="product-card" 
+                     data-category="Accessories" 
+                     data-name="Pro Protection Pad Set" 
+                     data-price="48"
+                     data-sizes="S,M,L,XL"
+                     data-measurements="Includes Knee Pads, Elbow Pads & Wrist Guards">
+                    <div class="img-wrapper contain">
+                        <img src="images/pads-set.jpg" alt="Pro Protection Pad Set">
+                        <span class="badge">PADS</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Pro Protection Pad Set</h3>
+                        <p class="price">$48</p>
+                    </div>
+                </div>
+
+                <!-- 6. ACCESSORY 3: Surfskate Wheels -->
+                <div class="product-card" 
+                     data-category="Accessories" 
+                     data-name="70mm Surfskate Wheels" 
+                     data-price="36"
+                     data-sizes="70mm / 78A,65mm / 80A"
+                     data-measurements="High rebound urethane for grip and carving">
+                    <div class="img-wrapper contain">
+                        <img src="images/Surfskate-Wheels.jpg" alt="70mm Surfskate Wheels">
+                        <span class="badge blue">WHEELS</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>70mm Surfskate Wheels</h3>
+                        <p class="price">$36</p>
+                    </div>
+                </div>
+
+                <!-- 7. OUTERWEAR 1: Vintage Knit Sweater II -->
+                <div class="product-card" 
+                     data-category="Outerwear" 
+                     data-name="Vintage Knit Sweater II" 
+                     data-price="89"
+                     data-sizes="S,M,L,XL"
+                     data-measurements="Chest: 22.5 in | Length: 27.5 in | Heavy Cotton Knit">
+                    <div class="img-wrapper contain">
+                        <img src="images/Sweater2.jpg" alt="Vintage Knit Sweater II">
+                        <span class="badge">SWEATER</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Vintage Knit Sweater II</h3>
+                        <p class="price">$89</p>
+                    </div>
+                </div>
+
+                <!-- 8. OUTERWEAR 2: Vintage Knit Sweater -->
+                <div class="product-card" 
+                     data-category="Outerwear" 
+                     data-name="Vintage Knit Sweater" 
+                     data-price="95"
+                     data-sizes="S,M,L,XL"
+                     data-measurements="Chest: 23 in | Length: 27 in | 100% Wool">
+                    <div class="img-wrapper contain">
+                        <img src="images/Sweater.jpg" alt="Vintage Knit Sweater">
+                        <span class="badge blue">VINTAGE</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Vintage Knit Sweater</h3>
+                        <p class="price">$95</p>
+                    </div>
+                </div>
+
+                <!-- 9. ACCESSORY 4: Low Light 5-Panel Hat -->
+                <div class="product-card" 
+                     data-category="Accessories" 
+                     data-name="Low Light 5-Panel" 
+                     data-price="34"
+                     data-sizes="One Size"
+                     data-measurements="Adjustable Strapback (54cm - 61cm)">
+                    <div class="img-wrapper">
+                        <img src="images/Image (Low Light 5-Panel).png" alt="Low Light 5-Panel">
+                        <span class="badge">DROP 01</span>
+                    </div>
+                    <div class="card-info">
+                        <h3>Low Light 5-Panel</h3>
+                        <p class="price">$34</p>
+                    </div>
+                </div>
+
             </div>
         </div>
 
+        <!-- Floating Nav Pill -->
         <nav class="bottom-nav">
             <a href="index.html" class="nav-item">Home</a>
-            <a href="page2.html" class="nav-item active">Shop</a>
+            <a href="javascript:void(0)" class="nav-item active" id="shopNavTrigger">Shop</a>
         </nav>
+
     </div>
+
+    <!-- PRODUCT DETAIL MODAL SHEET -->
+    <div class="modal-overlay" id="productDetailModal">
+        <div class="modal-sheet">
+            <div class="modal-header">
+                <span class="modal-category-tag">Product Overview</span>
+                <button class="modal-close" id="closeProdModal">&times;</button>
+            </div>
+
+            <div class="modal-body-content">
+                <div class="modal-banner">
+                    <img id="modalProdImg" src="" alt="Product Image">
+                </div>
+
+                <div class="modal-info-header">
+                    <div>
+                        <h2 id="modalProdName"></h2>
+                        <span id="modalProdPrice"></span>
+                    </div>
+                </div>
+
+                <div class="modal-size-section">
+                    <label>Select Size</label>
+                    <div id="sizePillContainer" class="pill-container"></div>
+                </div>
+
+                <div class="measurement-box">
+                    <label><i class="bi bi-ruler me-1"></i> Garment Measurements</label>
+                    <p id="modalProdMeasurements"></p>
+                </div>
+
+                <button class="checkout-btn" id="addToBagBtn">ADD TO BASKET</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- CART & CHECKOUT MODAL DRAWER -->
+    <div class="modal-overlay" id="cartModal">
+        <div class="modal-sheet">
+            <div class="modal-header">
+                <h3 id="modalHeading">YOUR BASKET</h3>
+                <button class="modal-close" id="closeCart">&times;</button>
+            </div>
+
+            <!-- Basket Items View -->
+            <div id="basketView">
+                <div class="cart-body" id="cartBody">
+                    <p class="empty-msg">Your shopping bag is empty. Click any item to select size and add it!</p>
+                </div>
+                <div class="cart-footer">
+                    <div class="subtotal">
+                        <span>Subtotal</span>
+                        <strong id="cartSubtotal">$0.00</strong>
+                    </div>
+                    <button class="checkout-btn" id="proceedCheckoutBtn">PROCEED TO CHECKOUT</button>
+                </div>
+            </div>
+
+            <!-- Checkout Form View -->
+            <div id="checkoutFormView" style="display: none; padding-top: 12px;">
+                <p style="font-size: 0.8rem; color: #666; margin-bottom: 12px; font-weight: 700;">Ready to purchase?</p>
+                <form id="checkoutForm" style="display: flex; flex-direction: column; gap: 10px;">
+                    <div>
+                        <label style="font-size: 0.72rem; font-weight: 700; display: block; margin-bottom: 2px;">Full Name</label>
+                        <input type="text" id="custName" required placeholder="John Doe" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.8rem;">
+                    </div>
+                    <div>
+                        <label style="font-size: 0.72rem; font-weight: 700; display: block; margin-bottom: 2px;">Delivery Address</label>
+                        <input type="text" id="custAddress" required placeholder="123 Street Name, City" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.8rem;">
+                    </div>
+                    <div>
+                        <label style="font-size: 0.72rem; font-weight: 700; display: block; margin-bottom: 2px;">Card Number</label>
+                        <input type="text" id="custCard" required placeholder="4532 •••• •••• 8890" maxlength="19" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.8rem;">
+                    </div>
+                    <div style="display: flex; gap: 10px;">
+                        <div style="flex: 1;">
+                            <label style="font-size: 0.72rem; font-weight: 700; display: block; margin-bottom: 2px;">Expiry Date</label>
+                            <input type="text" id="custExp" required placeholder="MM/YY" maxlength="5" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.8rem;">
+                        </div>
+                        <div style="flex: 1;">
+                            <label style="font-size: 0.72rem; font-weight: 700; display: block; margin-bottom: 2px;">CVC</label>
+                            <input type="text" id="custCvc" required placeholder="123" maxlength="4" style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.8rem;">
+                        </div>
+                    </div>
+                    <div style="margin-top: 10px; border-top: 1px solid #eee; padding-top: 10px;">
+                        <div class="subtotal" style="margin-bottom: 10px;">
+                            <span>Total Due</span>
+                            <strong id="formTotalAmount">$0.00</strong>
+                        </div>
+                        <button type="submit" class="checkout-btn" style="background: #2563eb;">PAY NOW</button>
+                        <button type="button" id="backToBasketBtn" style="width: 100%; background: none; border: none; color: #666; margin-top: 8px; font-size: 0.75rem; cursor: pointer;">&larr; Back to Basket</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Success Confirmation Screen -->
+            <div id="orderSuccessView" style="display: none; text-align: center; padding: 24px 10px;">
+                <i class="bi bi-check-circle-fill" style="font-size: 2.5rem; color: #2563eb;"></i>
+                <h3 style="margin-top: 10px; font-size: 1.1rem;">ORDER CONFIRMED!</h3>
+                <p style="font-size: 0.8rem; color: #666; margin-top: 6px;">Thank you for your purchase. We are preparing your order for shipment.</p>
+                <button id="finishOrderBtn" class="checkout-btn" style="margin-top: 16px;">CONTINUE SHOPPING</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="scripts/index.js"></script>
 </body>
 </html>
